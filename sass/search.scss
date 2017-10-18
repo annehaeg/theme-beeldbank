@@ -1,0 +1,20 @@
+@import 'base';
+
+#search-container{
+  text-align: right;
+}
+
+.form-group {
+  input[type=text] {
+    display: block;
+    float:left;
+    width: 65%;
+    margin: 0;
+    padding: 0.8% 1%;
+  }
+  button {
+    display: block;
+    float:left;
+    width: 35%;
+  }
+}
