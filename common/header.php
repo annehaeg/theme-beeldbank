@@ -43,16 +43,21 @@
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
     <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
     <header role="banner">
+        <div class="offcanvas" id="offcanvas">
         <div id="hamburgercontainer" class="hidden-de">
-            <a href="#"><i></i></a>
+            <a href="#" id="navigation-toggle" onfocus="navToggle()"><i class="fa fa-bars fa-lg"></i></a>
+        </div>
+<!--        <div id="offcanvas_list">-->
+<!--            --><?php //echo public_nav_main_bootstrap(); ?>
+<!--        </div>-->
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-3 center">
-                    <img id='arteveldelogo' src="<?php echo img('arteveldelogo.png'); ?>" />
+                    <a href="https://www.arteveldehogeschool.be/"><img data-pin-nopin='niet' id='arteveldelogo' src="<?php echo img('arteveldelogo.png'); ?>" /></a>
                 </div>
-                <div class="col-9 hidden-sm right font-heavy">
-                    <h1 class="font-heavy">
+                <div class="col-9 hidden-sm right font-bold desktopnavigation">
+                    <h1 class="font-bold">
                         <?php echo option('site_title'); ?>
                     </h1>
                     <?php echo public_nav_main_bootstrap(); ?>

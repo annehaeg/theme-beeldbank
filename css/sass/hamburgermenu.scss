@@ -1,0 +1,71 @@
+@import 'base';
+
+#hamburgercontainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20vw;
+  height: 5rem;
+  background-color: $blue;
+  text-align: center;
+  z-index: 20;
+  a{
+    font-size: 40px;
+    display: block;
+    text-align: center;
+    i {
+      color: $white;
+      display: block;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.offcanvas{
+  display:block;
+}
+.navopen{
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  transition: all 320ms ease-out 0s;
+}
+
+
+
+//#offcanvas_list{
+//  position:absolute;
+//  right: 0;
+//  top: 0;
+//  //top: -100%;
+//  display:block;
+//  background-color: $backgrey;
+//  z-index: 1000;
+//  width: 80vw;
+//  ul{
+//    list-style-type: none;
+//    padding: 0;
+//    li{
+//      border-bottom: 2px solid $white;
+//    }
+//    a{
+//      display: block;
+//      width: 100%;
+//      color: $white;
+//      font-size:1.8rem;
+//      padding-left: 20px;
+//      padding-bottom: 10px;
+//      &:hover{
+//        color: $backgrey;
+//      }
+//    }
+//  }
+//}
+
+.offcanvas-open #offcanvas_list{
+  top: 0;
+  transition: all 320ms ease-out 0s;
+}

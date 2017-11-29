@@ -1,0 +1,273 @@
+// Colours
+$white: #ffffff;
+$orange:#EE9900;
+$blue: #00AACC;
+$green: #BBCC00;
+$magenta: #CC0077;
+$lightestgrey: #EFEFEF;
+$lightgrey: #DDDDDD;
+$grey: #AAAAAA;
+$darkgrey: #777777;
+$backgrey: #3f3f3f;
+$black: #333333;
+
+
+// Font
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+
+// Typography
+
+*{
+  font-family:'Source Sans Pro', sans-serif;
+  color:$black;
+  line-height:1.5;
+}
+
+h1{ font-size:2rem  }
+h2{font-size:21px; font-weight: 600;}
+h3{font-size:1.125rem}
+h4{font-size:1rem}
+
+h2{
+  color: $magenta;
+  line-height: 30px;
+  margin: 0 0 5px;
+  a{
+    color: $magenta;
+  }
+}
+
+p, button, input, textarea{
+  font-size:17px;
+  font-weight:300;
+  line-height:22px;
+  &:focus{
+    outline: none;
+  }
+}
+
+.font-light{font-weight:300}
+.font-regular{font-weight:400}
+.font-bold{font-weight:600}
+.font-heavy{font-weight:700}
+
+// links
+a{
+  text-decoration: none;
+  &:hover{color:$grey};
+  &:active{color:$blue};
+}
+
+a.white{
+  color: $white;
+}
+
+// buttons
+button, input[type=submit]{
+  background-color: $backgrey;
+  color: $white;
+  border: 0;
+  padding: 1% 2%;
+  cursor: pointer;
+}
+
+button:hover, input[type=submit]:hover{
+  background-color: $darkgrey;
+  transition: 0.5s background-color;
+}
+
+//forms
+
+fieldset{
+  border: 0;
+  padding: 0;
+  @media only screen and (min-width:50em){
+  margin: 1rem 0;
+  }
+  .field{
+    display: block;
+    padding: 0.5rem 0;
+    @media only screen and (min-width: 50em){
+      display: block;
+      padding: 1.5rem 0;
+    }
+    label{
+      @media only screen and (min-width:50em){
+        display: block;
+        float: left;
+        width: 10%;
+        margin-right: 5%;
+      }
+    }
+    div {
+      width: 100%;
+      @media only screen and (min-width:50em) {
+        display: block;
+        float: left;
+        width: 85%;
+      }
+      input[type=text], textarea {
+        width: 100%;
+        border: 1px solid $lightgrey;
+      }
+    }
+  }
+  input[type=submit]{
+    float: right;
+  }
+}
+
+//Gridsystem
+
+*, *:before, *:after{ box-sizing: inherit;}
+body,html{
+  height:100%;
+  width:100%;
+  padding:0;
+  font-size:100%;
+}
+
+html{
+  height: 100%;
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+
+.ubercontainer{
+  min-height: 100%;
+  position: relative;
+}
+
+main{
+  padding-bottom: 5rem;
+}
+
+.center,.container{
+  margin-left:auto;
+  margin-right:auto
+}
+
+.left{text-align:left}
+.right{text-align:right}
+.center{text-align:center}
+.justify{text-align:justify}
+
+.container{width:90%}
+.row{position:relative;width:100%}
+.row [class^=col]{
+  float:left;
+  margin:.5rem 2%;
+  min-height:.125rem
+}
+
+// blokjessysteem
+
+.blauw{
+  background-color: $blue;
+}
+
+.groen{
+  background-color: $green;
+}
+
+.magenta{
+  background-color: $magenta;
+}
+
+.oranje{
+  background-color: $orange;
+}
+
+.oranjerand{
+  border: 3px dotted $orange;
+}
+
+.blokje{
+  margin-bottom: 2rem;
+  height: 100%;
+  display:block;
+  padding: 10px 20px;
+  h2 {
+    color: $white;
+    margin-bottom: 0;
+  }
+  h4,a{
+    color: $white;
+    margin-top: 0;
+    font-weight: 400;
+  }
+  img{
+    width:100%;
+  }
+}
+
+.blauw.blokje{
+  padding: 0;
+}
+
+.imagecontainer {
+  a {
+    display: block;
+    width: 100%;
+    img{
+      display: block;
+      width: inherit;
+    }
+  }
+}
+
+
+  .col-1,.col-10,.col-11,.col-12,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9{width:96%}
+  .col-1-sm{width:4.33%}
+  .col-2-sm{width:12.66%}
+  .col-3-sm{width:21%}
+  .col-4-sm{width:29.33%}
+  .col-5-sm{width:37.66%}
+  .col-6-sm{width:46%}
+  .col-7-sm{width:54.33%}
+  .col-8-sm{width:62.66%}
+  .col-9-sm{width:71%}
+  .col-10-sm{width:79.33%}
+  .col-11-sm{width:87.66%}
+  .col-12-sm{width:96%}
+
+  .row::after{content:"";display:table;clear:both}
+  .hidden-sm{display:none}
+  .hidden-de{display:block}
+
+  @media only screen and (min-width:50em){
+    .container{
+      width:80%
+    }
+    .col-1{width:4.33%}
+    .col-2{width:12.66%}
+    .col-3{width:21%}
+    .col-4{width:29.33%}
+    .col-5{width:37.66%}
+    .col-6{width:46%}
+    .col-7{width:54.33%}
+    .col-8{width:62.66%}
+    .col-9{width:71%}
+    .col-10{width:79.33%}
+    .col-11{width:87.66%}
+    .col-12{width:96%}
+    .hidden-sm{display:block}
+    .hidden-de{display:none}
+
+  }
+
+  @media only screen and (min-width:60em){
+    .container{
+      width:100%;
+      max-width:60rem
+    }
+  }
+
+  // Clears
+  .clear{  clear: both;  }
+  .clearright{  clear: right;  }
+  .clearleft{ clear: left;}

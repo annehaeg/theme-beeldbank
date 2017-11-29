@@ -10,4 +10,5 @@
     </footer>
 </div>
 </body>
+<?php queue_js_file('globals'); ?>
 </html>

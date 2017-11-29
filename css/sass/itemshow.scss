@@ -1,0 +1,115 @@
+@import "base";
+
+.itemimage{
+display: block;
+  width: 100%;
+}
+
+
+.pager{
+  list-style-type: none;
+  display:block;
+  padding-bottom: 20px;
+  .previous{
+    display:block;
+    float: left;
+  }
+  .next{
+    display: block;
+    float: right;
+  }
+}
+
+.tags a{
+  padding: 0 5px 2px 5px;
+  background-color: $blue;
+  color: $white;
+  &:hover{
+    color: $white;
+  }
+}
+
+/* @end */
+/* @group ----- Show ----- */
+#itemfiles {
+  margin: 0;
+  background-color: #dedede;
+}
+
+#itemfiles .chocolat-close {
+  display: none;
+}
+
+#itemfiles.chocolat-in-fullscreen .chocolat-close {
+  display: block;
+}
+
+#itemfiles .item-file {
+  text-align: center;
+}
+
+#itemfiles .item-file > *,
+#itemfiles .item-file img {
+  margin: 0 auto;
+  max-height: 50vh;
+}
+
+#itemfiles-nav {
+  margin: 1.33333em auto;
+  text-align: center;
+}
+
+#itemfiles-nav img {
+  width: 4em;
+}
+
+.element-set {
+  margin-bottom: 2.66667em;
+}
+
+.element-set h2 {
+  border-color: #dedede;
+  border-bottom-width: 0.05556em;
+  border-bottom-style: solid;
+  padding-bottom: 0.27778em;
+}
+
+.element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1.33333em;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.element h3 {
+  width: 18.75%;
+  margin: 0;
+  text-align: right;
+  padding: 0 0.625%;
+}
+
+.element-text {
+  width: 81.25%;
+  padding: 0 0.625%;
+}
+
+.element-text > *:first-child {
+  margin-top: 0;
+}
+
+.chocolat-overlay {
+  background-color: $backgrey;
+}
+
+.item-file{
+  display: none;
+}
+
+.item-file.application-pdf{
+  display:block;
+}

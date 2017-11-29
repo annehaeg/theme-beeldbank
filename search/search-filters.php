@@ -1,4 +1,5 @@
-<!--<div id="--><?php //echo $options['id']; ?><!--">-->
+<div id="<?php echo $options['id']; ?>">
+    <?php echo 'Zoeken: ' . html_escape($query); ?>
 <!--<ul>-->
 <!--    <li>--><?php //echo __('Query:');?><!-- --><?php //echo html_escape($query); ?><!--</li>-->
 <!--    <li>--><?php //echo __('Query type:');?><!-- --><?php //echo html_escape($query_type); ?><!--</li>-->
@@ -10,4 +11,4 @@
 <!--        </ul>-->
 <!--    </li>-->
 <!--</ul>-->
-<!--</div>-->
+</div>
