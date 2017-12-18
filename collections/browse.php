@@ -43,7 +43,11 @@
                     </div>
     <?php endforeach; ?>
         <?php else : ?>
-            <p><?php echo 'No collections added, yet.'; ?></p>
+    <div class="row">
+        <div class="col-12">
+            <p><?php echo 'Er zijn nog geen collecties toegevoegd.'; ?></p>
+        </div>
+    </div>
         <?php endif; ?>
 
 

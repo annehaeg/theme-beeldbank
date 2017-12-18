@@ -53,6 +53,7 @@ p, button, input, textarea{
 .font-bold{font-weight:600}
 .font-heavy{font-weight:700}
 
+
 // links
 a{
   text-decoration: none;
@@ -76,47 +77,6 @@ button, input[type=submit]{
 button:hover, input[type=submit]:hover{
   background-color: $darkgrey;
   transition: 0.5s background-color;
-}
-
-//forms
-
-fieldset{
-  border: 0;
-  padding: 0;
-  @media only screen and (min-width:50em){
-  margin: 1rem 0;
-  }
-  .field{
-    display: block;
-    padding: 0.5rem 0;
-    @media only screen and (min-width: 50em){
-      display: block;
-      padding: 1.5rem 0;
-    }
-    label{
-      @media only screen and (min-width:50em){
-        display: block;
-        float: left;
-        width: 10%;
-        margin-right: 5%;
-      }
-    }
-    div {
-      width: 100%;
-      @media only screen and (min-width:50em) {
-        display: block;
-        float: left;
-        width: 85%;
-      }
-      input[type=text], textarea {
-        width: 100%;
-        border: 1px solid $lightgrey;
-      }
-    }
-  }
-  input[type=submit]{
-    float: right;
-  }
 }
 
 //Gridsystem
@@ -163,64 +123,6 @@ main{
   margin:.5rem 2%;
   min-height:.125rem
 }
-
-// blokjessysteem
-
-.blauw{
-  background-color: $blue;
-}
-
-.groen{
-  background-color: $green;
-}
-
-.magenta{
-  background-color: $magenta;
-}
-
-.oranje{
-  background-color: $orange;
-}
-
-.oranjerand{
-  border: 3px dotted $orange;
-}
-
-.blokje{
-  margin-bottom: 2rem;
-  height: 100%;
-  display:block;
-  padding: 10px 20px;
-  h2 {
-    color: $white;
-    margin-bottom: 0;
-  }
-  h4,a{
-    color: $white;
-    margin-top: 0;
-    font-weight: 400;
-  }
-  img{
-    width:100%;
-  }
-}
-
-.blauw.blokje{
-  padding: 0;
-}
-
-.imagecontainer {
-  a {
-    display: block;
-    width: 100%;
-    img{
-      display: block;
-      width: inherit;
-    }
-  }
-}
-
-
   .col-1,.col-10,.col-11,.col-12,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9{width:96%}
   .col-1-sm{width:4.33%}
   .col-2-sm{width:12.66%}

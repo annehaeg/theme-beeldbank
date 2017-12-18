@@ -11,4 +11,5 @@
 </div>
 </body>
 <?php queue_js_file('globals'); ?>
+<?php queue_js_file('items-show'); ?>
 </html>

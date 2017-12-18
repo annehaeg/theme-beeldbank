@@ -81,44 +81,157 @@ $hasImages = (count($images) > 0);
 <!--                        --><?php //endif; ?>
 <!--                    --><?php //endforeach; ?>
 <!--        </div>-->
+<!--<div class="row">-->
+<!--    <div class="col-12">-->
+<!--    <h2>--><?php //if(metadata($item, array('Dublin Core', 'AlternativeTitle'))){
+//            echo metadata($item, array('Dublin Core', 'AlternativeTitle'), array('all' => true, 'delimiter' => ', '));
+//        }
+//        else{
+//            echo metadata($item, array('Dublin Core', 'Title'), array('all' => true, 'delimiter' => ', '));
+//        }?>
+<!--    </h2>-->
+<!--</div></div>-->
 <div class="row">
     <div class="col-12">
-    <table>
-        <thead>
-        <h2><?php if(metadata($item, array('Dublin Core', 'AlternativeTitle'))){
-            echo metadata($item, array('Dublin Core', 'AlternativeTitle'), array('all' => true, 'delimiter' => ', '));
-            }
-            else{
-                echo metadata($item, array('Dublin Core', 'Title'), array('all' => true, 'delimiter' => ', '));
-            }?>
-        </h2>
-        </thead>
-        <tbody>
-        <?php $metadata = array(    'Titel' =>'Title',
-                                    'Onderwerp' =>'Subject',
-                                    'Beschrijving' => 'Description',
-                                    'Locatie' =>'Coverage-Spatial',
-                                    'Uitgever' => 'Publisher',
-                                    'Locatie Uitgever' => 'Coverage-Spatial-Publisher',
-                                    'Taal' => 'Language',
-                                    'Datum' => 'Date') ; ?>
+        <!-- Tab links -->
+        <div class="tab">
+            <button class="tablinks" id="defaultOpen" onclick="openMenu(event, 'Algemeen')">Algemeen</button>
+            <script>
+                window.onload = function() {
+                    document.getElementById("defaultOpen").click();
+                }
+            </script>
+            <button class="tablinks" onclick="openMenu(event, 'Uitgave')">Uitgave</button>
+            <button class="tablinks" onclick="openMenu(event, 'Periode')">Periode</button>
+            <button class="tablinks" onclick="openMenu(event, 'Documentsoort')">Documentsoort</button>
+            <button class="tablinks" onclick="openMenu(event, 'Druktechnisch')">Druktechnische info</button>
+            <button class="tablinks" onclick="openMenu(event, 'Werktitel')">Werktitel</button>
+            <button class="tablinks" onclick="openMenu(event, 'Conditie')">Conditie</button>
+            <button class="tablinks" onclick="openMenu(event, 'Bewaring')">Bewaring</button>
+        </div>
 
-        <?php foreach($metadata as $key => $value):?>
+        <!-- Tab content -->
+        <div id="Algemeen" class="tabcontent">
+            <table>
+                <tbody>
+                <?php $metadata_Algemeen = array(
+                    'Titel' =>'Title',
+                    'Auteur' =>'Creator',
+                    'Onderwerp' =>'Subject',
+                    'Beschrijving' => 'Description',
+                    'Co-auteur(s)' => 'Contributor'
+                ) ; ?>
+            <?php foreach($metadata_Algemeen as $key => $value):?>
                 <?php if(metadata($item, array('Dublin Core', $value))):?>
-                <tr>
-                    <td><?php echo $key ?> :</td>
-                    <td><?php echo metadata($item, array('Dublin Core', $value), array('all' => true, 'delimiter' => ', ')); ?></td>
-                </tr>
+                    <tr>
+                        <td><?php echo $key ?> :</td>
+                        <td><?php echo metadata($item, array('Dublin Core', $value), array('all' => true, 'delimiter' => ', ')); ?></td>
+                    </tr>
                 <?php endif ?>
-        <?php endforeach ?>
-        <tr class="tags">
-            <td>Tags:</td>
-            <td><?php echo tag_string($item,'items/browse' , ' '); ?></td>
-        </tr>
-        </tbody>
-    </table>
+            <?php endforeach ?>
+            <tr class="tags">
+                <td>Tags:</td>
+                <td><?php echo tag_string($item,'items/browse' , ' '); ?></td>
+            </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="Uitgave" class="tabcontent">
+            <table>
+                <tbody>
+                <?php $metadata_Uitgave = array(
+                    'Uitgever' =>'Publisher',
+                    'Locatie uitgever' =>'Coverage-Spatial-Publisher',
+                    'Datum' => 'Date'
+                ) ; ?>
+                <?php foreach($metadata_Uitgave as $key => $value):?>
+                    <?php if(metadata($item, array('Dublin Core', $value))):?>
+                        <tr>
+                            <td><?php echo $key ?> :</td>
+                            <td><?php echo metadata($item, array('Dublin Core', $value), array('all' => true, 'delimiter' => ', ')); ?></td>
+                        </tr>
+                    <?php endif ?>
+                <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="Periode" class="tabcontent">
+            <table>
+                <tbody>
+                <?php $metadata_Periode = array(
+                    'Periode' =>'Periode',
+                    'Stijl' =>'Stijl',
+                    'Locatie' => 'Coverage-Spatial'
+                ) ; ?>
+                <?php foreach($metadata_Periode as $key => $value):?>
+                    <?php if(metadata($item, array('Dublin Core', $value))):?>
+                        <tr>
+                            <td><?php echo $key ?> :</td>
+                            <td><?php echo metadata($item, array('Dublin Core', $value), array('all' => true, 'delimiter' => ', ')); ?></td>
+                        </tr>
+                    <?php endif ?>
+                <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="Documentsoort" class="tabcontent">
+            <table>
+                <tbody>
+                <?php $metadata_Documentsoort = array(
+                    'Samenvatting' =>'Description-Abstract',
+                    'Genre drukwerk' =>'Genre-Drukwerk',
+                    'Documentsoort' => 'Documentsoort',
+                    'Toepassing' => 'Toepassing'
+                ) ; ?>
+                <?php foreach($metadata_Documentsoort as $key => $value):?>
+                    <?php if(metadata($item, array('Dublin Core', $value))):?>
+                        <tr>
+                            <td><?php echo $key ?> :</td>
+                            <td><?php echo metadata($item, array('Dublin Core', $value), array('all' => true, 'delimiter' => ', ')); ?></td>
+                        </tr>
+                    <?php endif ?>
+                <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="Druktechnisch" class="tabcontent">
+            <table>
+                <tbody>
+                <?php $metadata_Druktechnisch = array(
+                    'Druktechniek' =>'Druktechniek',
+                    'Veredeling druktechnisch' =>'Veredeling-Druk',
+                    'Kleur' => 'Kleur',
+                    'Veredeling inkt' => 'Veredeling-Inkt',
+                    'Materiaal' => 'Format-Medium'
+                ) ; ?>
+                <?php foreach($metadata_Druktechnisch as $key => $value):?>
+                    <?php if(metadata($item, array('Dublin Core', $value))):?>
+                        <tr>
+                            <td><?php echo $key ?> :</td>
+                            <td><?php echo metadata($item, array('Dublin Core', $value), array('all' => true, 'delimiter' => ', ')); ?></td>
+                        </tr>
+                    <?php endif ?>
+                <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="Werktitel" class="tabcontent">
+        </div>
+
+        <div id="Conditie" class="tabcontent">
+
+        </div>
+
+        <div id="Bewaring" class="tabcontent">
+
+        </div>
     </div>
-    </div>
+</div>
     <div class="row">
     <div class="col-12">
     <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>

@@ -1,0 +1,72 @@
+// blokjessysteem
+
+.blauw{
+  background-color: $blue;
+}
+
+.groen{
+  background-color: $green;
+}
+
+.magenta{
+  background-color: $magenta;
+}
+
+.oranje{
+  background-color: $orange;
+}
+
+.oranjerand{
+  border: 3px dotted $orange;
+}
+
+.blokje{
+  margin-bottom: 2rem;
+  height: 100%;
+  display:block;
+  padding: 10px 20px;
+  h2 {
+    color: $white;
+    margin-bottom: 0;
+  }
+  h4,a{
+    color: $white;
+    margin-top: 0;
+    font-weight: 400;
+  }
+  img{
+    width:100%;
+  }
+}
+
+.carousel{
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.imagecontainer {
+  a {
+    display: block;
+    width: 100%;
+    img{
+      display: block;
+      width: inherit;
+    }
+  }
+}
+.featured {
+  img{
+    margin-bottom: 10px;
+  }
+  p{
+    margin-top: 0;
+    margin-bottom: 10px;
+    a{
+      color:$backgrey;
+    }
+  }
+  .item-description{
+    display:none;
+  }
+}

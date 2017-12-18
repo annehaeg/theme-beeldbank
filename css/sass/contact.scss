@@ -1,0 +1,40 @@
+//forms
+
+fieldset{
+  border: 0;
+  padding: 0;
+  @media only screen and (min-width:50em){
+    margin: 1rem 0;
+  }
+  .field{
+    display: block;
+    padding: 0.5rem 0;
+    @media only screen and (min-width: 50em){
+      display: block;
+      padding: 1.5rem 0;
+    }
+    label{
+      @media only screen and (min-width:50em){
+        display: block;
+        float: left;
+        width: 10%;
+        margin-right: 5%;
+      }
+    }
+    div {
+      width: 100%;
+      @media only screen and (min-width:50em) {
+        display: block;
+        float: left;
+        width: 85%;
+      }
+      input[type=text], textarea {
+        width: 100%;
+        border: 1px solid $lightgrey;
+      }
+    }
+  }
+  input[type=submit]{
+    float: right;
+  }
+}

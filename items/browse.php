@@ -85,7 +85,12 @@
         </div>
     <?php endforeach; ?>
 <?php else : ?>
-    <p><?php echo 'Nog geen items toegevoegd.'; ?></p>
+    <div class="row">
+        <div class="col-12">
+            <p><?php echo 'Nog geen items toegevoegd.'; ?></p>
+        </div>
+    </div>
+
 <?php endif; ?>
 <?php echo pagination_links(); ?>
 

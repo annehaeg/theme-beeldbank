@@ -18,7 +18,7 @@
 
 <div class="row">
     <div class="col-8">
-        <div class="blauw blokje">
+        <div class="blokje carousel">
     <?php echo $this->shortcodes('[carousel autoscroll=true sort=random num=7]'); ?>
         </div>
         <div class="about blokje oranjerand">
@@ -26,28 +26,17 @@
                 <?php echo get_theme_option('Homepage About'); ?>
             </p>
         </div>
-        <div class="blokje oranje">
-            <table>
-                <thead> Openingsuren</thead>
-                <tbody>
-                <tr><td>Maandag:</td><td>8.30-13.00 / 13.30-17.00</td></tr>
-                <tr><td>Dinsdag:</td><td>8.30-13.00 / 13.30-17.00</td></tr>
-                <tr><td>Woensdag:</td><td>8.30-13.00 / 13.30-17.00</td></tr>
-                <tr><td>Donderdag:</td><td>8.30-13.00 / 13.30-17.00</td></tr>
-                <tr><td>Vrijdag:</td><td>8.30-13.00 / 13.30-15.30</td></tr>
-                </tbody>
-            </table>
-        </div>
     </div>
     <div class="col-4 featured">
         <?php if (get_theme_option('Display Featured Item') !== '0'): ?>
         <div class="oranje blokje">
                 <h2><?php echo __('Aanbevolen item'); ?></h2>
                 <?php echo random_featured_items(1); ?>
+            <p><a href="<?php echo html_escape(url('items')); ?>"><?php echo __('Bekijk al onze items >>'); ?></a></p>
         </div>
         <?php endif; ?>
         <?php if (get_theme_option('Display Featured Collection') !== '0'): ?>
-        <div class="groen blokje">
+        <div class="blauw blokje">
             <h2><?php echo __('Aanbevolen collectie'); ?></h2>
             <?php echo random_featured_collection(); ?>
             <p><a href="<?php echo html_escape(url('collections')); ?>"><?php echo __('Bekijk al onze collecties >>'); ?></a></p>
@@ -60,16 +49,14 @@
             $recentItems = (int) $recentItems;
         endif;
         if ($recentItems):?>
-        <div class="magenta blokje">
+        <div class="groen blokje">
             <h2><?php echo __('Recente items'); ?></h2>
             <?php echo recent_items($recentItems); ?>
         </div>
         <? endif ?>
         <?php if ((get_theme_option('Display Featured Exhibit') !== '0') && plugin_is_active('ExhibitBuilder') && function_exists('exhibit_builder_display_random_featured_exhibit')): ?>
-        <div class="oranje blokje">
-            <div class="col-sm-4">
+        <div class="magenta blokje">
                 <?php echo exhibit_builder_display_random_featured_exhibit(); ?>
-            </div>
         </div>
         <?php endif; ?>
     </div>
