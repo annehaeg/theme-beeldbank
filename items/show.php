@@ -118,7 +118,6 @@ $hasImages = (count($images) > 0);
                     'Titel' =>'Title',
                     'Auteur' =>'Creator',
                     'Onderwerp' =>'Subject',
-                    'Beschrijving' => 'Description',
                     'Co-auteur(s)' => 'Contributor'
                 ) ; ?>
             <?php foreach($metadata_Algemeen as $key => $value):?>
@@ -181,8 +180,8 @@ $hasImages = (count($images) > 0);
             <table>
                 <tbody>
                 <?php $metadata_Documentsoort = array(
-                    'Samenvatting' =>'Description-Abstract',
-                    'Genre drukwerk' =>'Genre-Drukwerk',
+                    'Samenvatting' =>'Description',
+                    'Genre' =>'Genre',
                     'Documentsoort' => 'Documentsoort',
                     'Toepassing' => 'Toepassing'
                 ) ; ?>
@@ -221,14 +220,70 @@ $hasImages = (count($images) > 0);
         </div>
 
         <div id="Werktitel" class="tabcontent">
+            <table>
+                <tbody>
+                <?php $metadata_Werktitel = array(
+                    'Gedrukte gegevens op keerzijde' =>'Keerzijde-druk',
+                    'Notitie keerzijde' =>'Keerzijde-schrift',
+                    'Stempel' => 'Keerzijde-stempel',
+                    'Catalogusnummer uitgever' => 'Catalogusnummer-Uitgever',
+                    'Varia' => 'Varia',
+                    'Classificaties' => 'Classificaties'
+                ) ; ?>
+                <?php foreach($metadata_Werktitel as $key => $value):?>
+                    <?php if(metadata($item, array('Dublin Core', $value))):?>
+                        <tr>
+                            <td><?php echo $key ?> :</td>
+                            <td><?php echo metadata($item, array('Dublin Core', $value), array('all' => true, 'delimiter' => ', ')); ?></td>
+                        </tr>
+                    <?php endif ?>
+                <?php endforeach ?>
+                </tbody>
+            </table>
         </div>
 
         <div id="Conditie" class="tabcontent">
-
+            <table>
+            <tbody>
+            <?php $metadata_Conditie = array(
+                'Type' =>'Type',
+                'Afmetingen' =>'Format-Extent',
+                'Onderdelen' => 'Onderdelen',
+                'Schade' => 'Schade',
+                'Taal' => 'Language'
+            ) ; ?>
+            <?php foreach($metadata_Conditie as $key => $value):?>
+                <?php if(metadata($item, array('Dublin Core', $value))):?>
+                    <tr>
+                        <td><?php echo $key ?> :</td>
+                        <td><?php echo metadata($item, array('Dublin Core', $value), array('all' => true, 'delimiter' => ', ')); ?></td>
+                    </tr>
+                <?php endif ?>
+            <?php endforeach ?>
+            </tbody>
+            </table>
         </div>
 
         <div id="Bewaring" class="tabcontent">
-
+            <table>
+            <tbody>
+            <?php $metadata_Bewaring = array(
+                'Bewaarplaats' =>'Bewaarplaats',
+                'Fonds' =>'Fonds',
+                'Schenking' => 'Provenance',
+                'Vroegere ID/bewaarplaats' => 'Geschiedenis',
+                'Rechten' => 'Rights'
+            ) ; ?>
+            <?php foreach($metadata_Bewaring as $key => $value):?>
+                <?php if(metadata($item, array('Dublin Core', $value))):?>
+                    <tr>
+                        <td><?php echo $key ?> :</td>
+                        <td><?php echo metadata($item, array('Dublin Core', $value), array('all' => true, 'delimiter' => ', ')); ?></td>
+                    </tr>
+                <?php endif ?>
+            <?php endforeach ?>
+            </tbody>
+            </table>
         </div>
     </div>
 </div>
